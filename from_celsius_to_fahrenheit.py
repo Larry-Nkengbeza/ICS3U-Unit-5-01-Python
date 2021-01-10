@@ -4,15 +4,20 @@
 
 def celsius_to_fahrenheit():
     # input
-    num = int(input("Enter a number in fahrenheit: "))
+    num_str = (input("Enter a number in fahrenheit: "))
     print("")
 
     # process
-    tempfahr = (9/5)*num+32
+    try:
+        num = int(num_str)
+        tempfahr = (9/5)*num+32
 
     # output
-    print("The temperature in fahrenheit is: {0}". format(tempfahr))
-
+        print("The temperature in fahrenheit is: {0}". format(tempfahr))
+    except Exception:
+        print("This is not an integer.")
+    finally:
+        print("Thanks for using the program.")
 
 def main():
     celsius_to_fahrenheit()
